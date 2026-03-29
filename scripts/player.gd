@@ -1,11 +1,13 @@
 extends CharacterBody3D
 
 @export var speed=7.0
-@export var jump_velocity=5.0
+@export var jump_velocity=8.0
 var gravity_strength=15.0
 var gravity_dir=Vector3.DOWN
 @onready var camera=$Camera3D
+@onready var anim=$AuxScene/AnimationPlayer
 var mouse_sens=0.003
+
 func _ready():
 	up_direction=-gravity_dir
 
@@ -32,6 +34,18 @@ func _physics_process(delta):
 	var fall_vel=velocity.project(gravity_dir)
 	var walk_vel=direction*speed
 	velocity=walk_vel+fall_vel
+	
+	#animation
+	if not is_on_floor():
+		if velocity.dot(up_direction)>0:
+			anim.play("Jumping0")
+		else:
+			anim.play("Fall")
+	else:
+		if walk_vel.length()>0.1:
+			anim.play("run")
+		else:
+			anim.play("idle")
 	move_and_slide()
 	if global_position.y<-15.0:
 		global_position=Vector3(0,5,0)
@@ -51,7 +65,5 @@ func align_with_gravity():
 		current_forward=transform.basis.y
 	var new_right=new_up.cross(current_forward).normalized()
 	var new_forward=new_right.cross(new_up).normalized()
-	var target_basis=Basis(new_right,new_up,-new_forward)
 	
-	var tween=create_tween()
-	tween.tween_property(self, "quaternion", target_basis.get_rotation_quaternion(), 0.4).set_trans(Tween.TRANS_SINE)
+	transform.basis=Basis(new_right,new_up,-new_forward).orthonormalized()

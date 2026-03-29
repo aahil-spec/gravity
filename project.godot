@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gravity"
-run/main_scene="uid://bwmx3yms68ll5"
+run/main_scene="uid://bu06h237ptq15"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -69,6 +69,7 @@ grav_right={
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
 
 [rendering]
