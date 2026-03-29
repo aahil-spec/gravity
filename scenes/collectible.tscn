@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cwh3voqpbboux"]
+
+[ext_resource type="Script" uid="uid://de5iaa5es6sxy" path="res://scripts/collectible.gd" id="1_bkg8t"]
+[ext_resource type="PackedScene" uid="uid://be6shg0gl05c7" path="res://models/apple/model.glb" id="2_1pg6c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_61c27"]
+radius = 0.96102756
+
+[node name="Collectible" type="Area3D" unique_id=1349453407]
+script = ExtResource("1_bkg8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=509847856]
+transform = Transform3D(0.5, 0, 0, 0, 0.45199278, -0.21378149, 0, 0.21378149, 0.45199278, 0, 0, 0)
+shape = SubResource("SphereShape3D_61c27")
+
+[node name="model" parent="." unique_id=1834009699 instance=ExtResource("2_1pg6c")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="model"]

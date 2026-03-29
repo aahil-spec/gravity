@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dv5ens802xnab"]
+
+[ext_resource type="PackedScene" uid="uid://c3a1pn4ruixe8" path="res://models/pole/low_poly_golf_flag_animated.glb" id="1_5nbog"]
+[ext_resource type="Script" uid="uid://b8kbn7v5xm230" path="res://scripts/finish.gd" id="1_07gpw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_07gpw"]
+radius = 0.16259766
+height = 2.270996
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pftv"]
+font_size = 72
+
+[node name="Finish" type="Area3D" unique_id=1080717885]
+script = ExtResource("1_07gpw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=233377710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009353995, 0.13549805, 0)
+shape = SubResource("CapsuleShape3D_07gpw")
+
+[node name="Sketchfab_Scene" parent="." unique_id=420508877 instance=ExtResource("1_5nbog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24719214, 1.0194455, 0)
+
+[node name="AnimationPlayer" parent="Sketchfab_Scene" index="1" unique_id=4523182]
+autoplay = &"Object_0"
+
+[node name="WinUI" type="CanvasLayer" parent="." unique_id=1165861988]
+
+[node name="ColorRect" type="ColorRect" parent="WinUI" unique_id=610114131]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6392157)
+
+[node name="Label" type="Label" parent="WinUI" unique_id=1412181968]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.5
+offset_top = -49.5
+offset_right = 297.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LEVEL COMPLETE"
+label_settings = SubResource("LabelSettings_2pftv")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+
+[editable path="Sketchfab_Scene"]

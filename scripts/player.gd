@@ -47,10 +47,6 @@ func _physics_process(delta):
 		else:
 			anim.play("Idle")
 	move_and_slide()
-	if global_position.y<-15.0:
-		global_position=Vector3(0,5,0)
-		velocity=Vector3.ZERO
-		set_gravity(Vector3.DOWN)
 	
 func set_gravity(new_dir:Vector3):
 	if gravity_dir==new_dir:
