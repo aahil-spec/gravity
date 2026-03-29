@@ -38,14 +38,14 @@ func _physics_process(delta):
 	#animation
 	if not is_on_floor():
 		if velocity.dot(up_direction)>0:
-			anim.play("Jumping0")
+			anim.play("Jump")
 		else:
 			anim.play("Fall")
 	else:
 		if walk_vel.length()>0.1:
-			anim.play("run")
+			anim.play("Run")
 		else:
-			anim.play("idle")
+			anim.play("Idle")
 	move_and_slide()
 	if global_position.y<-15.0:
 		global_position=Vector3(0,5,0)
