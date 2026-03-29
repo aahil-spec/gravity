@@ -38,14 +38,14 @@ func _physics_process(delta):
 	#animation
 	if not is_on_floor():
 		if velocity.dot(up_direction)>0:
-			anim.play("Jump")
+			anim.play("Jump",0.2)
 		else:
-			anim.play("Fall")
+			anim.play("Fall",0,2)
 	else:
 		if walk_vel.length()>0.1:
-			anim.play("Run")
+			anim.play("Run",0.2)
 		else:
-			anim.play("Idle")
+			anim.play("Idle",0.2)
 	move_and_slide()
 	
 func set_gravity(new_dir:Vector3):

@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b8kbn7v5xm230" path="res://scripts/finish.gd" id="1_07gpw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_07gpw"]
-radius = 0.16259766
-height = 2.270996
+radius = 0.20947266
+height = 4.447052
 
 [sub_resource type="LabelSettings" id="LabelSettings_2pftv"]
 font_size = 72
@@ -14,11 +14,11 @@ font_size = 72
 script = ExtResource("1_07gpw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=233377710]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.009353995, 0.13549805, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30634093, -0.72328186, 0)
 shape = SubResource("CapsuleShape3D_07gpw")
 
 [node name="Sketchfab_Scene" parent="." unique_id=420508877 instance=ExtResource("1_5nbog")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24719214, 1.0194455, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.24719214, 1.0194455, 0)
 
 [node name="AnimationPlayer" parent="Sketchfab_Scene" index="1" unique_id=4523182]
 autoplay = &"Object_0"

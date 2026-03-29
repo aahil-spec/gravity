@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bwmx3yms68ll5" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bam4t0443ql6g" path="res://assets/citrus_orchard_road_puresky_4k.exr" id="2_sugp2"]
+[ext_resource type="Texture2D" uid="uid://dwrk4qwnpsq0j" path="res://material/rubber_tiles_rough_4k.jpg" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://dv5ens802xnab" path="res://scenes/finish.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://cwh3voqpbboux" path="res://scenes/collectible.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ckkcnlgcrapvx" path="res://scenes/kill_zone.tscn" id="7_o6xl0"]
@@ -19,9 +20,9 @@ emission_energy_multiplier = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
 transparency = 1
-albedo_color = Color(2.117753e-06, 0.48261642, 0.48261625, 0.37254903)
+albedo_color = Color(0.76862746, 1, 0.99607843, 0.3529412)
 metallic = 0.8
-roughness = 0.05
+roughness_texture = ExtResource("2_tefeu")
 refraction_enabled = true
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qhqgy"]
@@ -32,6 +33,7 @@ sky_material = SubResource("PanoramaSkyMaterial_qhqgy")
 
 [sub_resource type="Environment" id="Environment_qlg0r"]
 background_mode = 2
+background_energy_multiplier = 0.8
 sky = SubResource("Sky_dqkch")
 
 [node name="Main" type="Node3D" unique_id=361245378]
@@ -176,7 +178,7 @@ size = Vector3(11.322266, 1, 28.09143)
 material = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="parkour1" unique_id=842172758]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 31.92704, 60.725945, 120.63402)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 31.92704, 63.3618, 119.67702)
 use_collision = true
 size = Vector3(11.322266, 1, 7.234703)
 material = SubResource("StandardMaterial3D_tbgi4")
@@ -216,7 +218,7 @@ size = Vector3(20.391663, 1, 59.315342)
 material = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="Finish" parent="parkour1" unique_id=1080717885 instance=ExtResource("5_tipki")]
-transform = Transform3D(-2, 1.509958e-07, 0, -3.019916e-07, -1, 0, 0, 0, 1, 101.0758, 48.41603, 222.05937)
+transform = Transform3D(-1, 1.509958e-07, 0, -1.509958e-07, -1, 0, 0, 0, 1, 101.0758, 47.238934, 222.05937)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1869153502]
 environment = SubResource("Environment_qlg0r")
