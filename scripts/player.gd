@@ -1,16 +1,9 @@
 extends CharacterBody3D
 
-@export var speed=6.0
-@export var jump_velocity=8.0
-var gravity_strength=9.8
+@export var speed=7.0
+@export var jump_velocity=5.0
+var gravity_strength=15.0
 var gravity_dir=Vector3.DOWN
-var gravity_list=[
-	Vector3.DOWN,
-	Vector3.UP,
-	Vector3.LEFT,
-	Vector3.RIGHT
-]
-var current_index=0
 @onready var camera=$Camera3D
 var mouse_sens=0.003
 func _ready():
@@ -30,21 +23,25 @@ func _physics_process(delta):
 		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 	if not is_on_floor():
 		velocity+=gravity_dir*gravity_strength*delta
-	if Input.is_action_just_pressed("switch_gravity"):
-		switch_gravity()
+	if Input.is_action_just_pressed("grav_down"):set_gravity(Vector3.DOWN)
+	if Input.is_action_just_pressed("grav_up"):set_gravity(Vector3.UP)
+	if Input.is_action_just_pressed("grav_left"):set_gravity(Vector3.LEFT)
+	if Input.is_action_just_pressed("grav_right"):set_gravity(Vector3.RIGHT)
 	var input_dir=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	var direction=(transform.basis*Vector3(input_dir.x,0,input_dir.y)).normalized()
 	var fall_vel=velocity.project(gravity_dir)
 	var walk_vel=direction*speed
 	velocity=walk_vel+fall_vel
 	move_and_slide()
+	if global_position.y<-15.0:
+		global_position=Vector3(0,5,0)
+		velocity=Vector3.ZERO
+		set_gravity(Vector3.DOWN)
 	
-func switch_gravity():
-	current_index+=1
-	if current_index>=gravity_list.size():
-		current_index=0
-		
-	gravity_dir=gravity_list[current_index]
+func set_gravity(new_dir:Vector3):
+	if gravity_dir==new_dir:
+		return
+	gravity_dir=new_dir
 	up_direction=-gravity_dir
 	align_with_gravity()
 func align_with_gravity():
@@ -57,4 +54,4 @@ func align_with_gravity():
 	var target_basis=Basis(new_right,new_up,-new_forward)
 	
 	var tween=create_tween()
-	tween.tween_property(self,"transform:basis",target_basis,0.4).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(self, "quaternion", target_basis.get_rotation_quaternion(), 0.4).set_trans(Tween.TRANS_SINE)
