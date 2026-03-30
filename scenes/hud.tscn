@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cwhyawwwd3opq"]
+
+[ext_resource type="Script" uid="uid://c5mhwvvj8pb1h" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ysmq"]
+font_size = 32
+
+[node name="HUD" type="CanvasLayer" unique_id=1764467698 groups=["HUD"]]
+script = ExtResource("1_ahhtf")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1896135266]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "00:00.00"
+label_settings = SubResource("LabelSettings_oo0fn")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=800171493]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Apples:0"
+label_settings = SubResource("LabelSettings_5ysmq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=319388680]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

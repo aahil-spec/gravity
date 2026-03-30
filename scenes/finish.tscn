@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3a1pn4ruixe8" path="res://models/pole/low_poly_golf_flag_animated.glb" id="1_5nbog"]
 [ext_resource type="Script" uid="uid://b8kbn7v5xm230" path="res://scripts/finish.gd" id="1_07gpw"]
+[ext_resource type="AudioStream" uid="uid://cqsv022m6ia43" path="res://sounds/win.mp3" id="3_2pftv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_07gpw"]
 radius = 0.20947266
@@ -48,6 +49,10 @@ grow_vertical = 2
 text = "LEVEL COMPLETE"
 label_settings = SubResource("LabelSettings_2pftv")
 metadata/_edit_use_anchors_ = true
+
+[node name="WinSound" type="AudioStreamPlayer" parent="." unique_id=1868696651]
+process_mode = 3
+stream = ExtResource("3_2pftv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 

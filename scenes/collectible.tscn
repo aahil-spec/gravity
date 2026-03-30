@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de5iaa5es6sxy" path="res://scripts/collectible.gd" id="1_bkg8t"]
 [ext_resource type="PackedScene" uid="uid://be6shg0gl05c7" path="res://models/apple/model.glb" id="2_1pg6c"]
+[ext_resource type="AudioStream" uid="uid://b8f2yohs36daf" path="res://sounds/confirmation.mp3" id="3_61c27"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_61c27"]
 radius = 0.96102756
@@ -15,6 +16,10 @@ shape = SubResource("SphereShape3D_61c27")
 
 [node name="model" parent="." unique_id=1834009699 instance=ExtResource("2_1pg6c")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="DingSound" type="AudioStreamPlayer" parent="." unique_id=1428932203]
+stream = ExtResource("3_61c27")
+volume_db = -15.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 

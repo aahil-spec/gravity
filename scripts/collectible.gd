@@ -13,5 +13,10 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.name=="Player":
+	if body.name == "Player":
+		$model.hide()
+		$CollisionShape3D.set_deferred("disabled", true)
+		$DingSound.play()
+		get_tree().call_group("HUD","add_apple")
+		await $DingSound.finished
 		queue_free()

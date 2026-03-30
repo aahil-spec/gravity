@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 @export var speed=7.0
 @export var jump_velocity=8.0
-var gravity_strength=15.0
+var gravity_strength=25.0
 var gravity_dir=Vector3.DOWN
 @onready var camera=$Camera3D
 @onready var anim=$AuxScene/AnimationPlayer
@@ -21,14 +21,23 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity+=up_direction*jump_velocity
+		$JumpSound.play()
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 	if not is_on_floor():
 		velocity+=gravity_dir*gravity_strength*delta
-	if Input.is_action_just_pressed("grav_down"):set_gravity(Vector3.DOWN)
-	if Input.is_action_just_pressed("grav_up"):set_gravity(Vector3.UP)
-	if Input.is_action_just_pressed("grav_left"):set_gravity(Vector3.LEFT)
-	if Input.is_action_just_pressed("grav_right"):set_gravity(Vector3.RIGHT)
+	if Input.is_action_just_pressed("grav_down"):
+		set_gravity(Vector3.DOWN)
+		$GravitySound.play()
+	if Input.is_action_just_pressed("grav_up"):
+		set_gravity(Vector3.UP)
+		$GravitySound.play()
+	if Input.is_action_just_pressed("grav_left"):
+		set_gravity(Vector3.LEFT)
+		$GravitySound.play()
+	if Input.is_action_just_pressed("grav_right"):
+		set_gravity(Vector3.RIGHT)
+		$GravitySound.play()
 	var input_dir=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	var direction=(transform.basis*Vector3(input_dir.x,0,input_dir.y)).normalized()
 	var fall_vel=velocity.project(gravity_dir)

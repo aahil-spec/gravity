@@ -20,7 +20,7 @@ emission_energy_multiplier = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
 transparency = 1
-albedo_color = Color(0.76862746, 1, 0.99607843, 0.3529412)
+albedo_color = Color(0.76862746, 1, 0.99607843, 0.54901963)
 metallic = 0.8
 roughness_texture = ExtResource("2_tefeu")
 refraction_enabled = true
@@ -40,22 +40,6 @@ sky = SubResource("Sky_dqkch")
 
 [node name="Player" parent="." unique_id=1430519122 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5896187, 0)
-
-[node name="UI" type="CanvasLayer" parent="." unique_id=2016939261]
-
-[node name="ColorRect" type="ColorRect" parent="UI" unique_id=2128158875]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -2.0
-offset_top = -2.0
-offset_right = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [node name="Start" type="Node3D" parent="." unique_id=490104643]
 
@@ -229,25 +213,25 @@ shadow_enabled = true
 [node name="Apples" type="Node3D" parent="." unique_id=1292049931]
 
 [node name="Collectible" parent="Apples" unique_id=1349453407 instance=ExtResource("6_tefeu")]
-transform = Transform3D(0.3, 0, 0, 0, -0.3, 2.6226834e-08, 0, -2.6226834e-08, -0.3, -0.01948762, 8.071463, 28.142635)
+transform = Transform3D(1, 0, 0, 0, -1, 1.509958e-07, 0, -1.509958e-07, -1, -0.01948762, 7.733347, 28.142635)
 
 [node name="Collectible2" parent="Apples" unique_id=1575940293 instance=ExtResource("6_tefeu")]
-transform = Transform3D(1.3113417e-08, -0.3, -2.6226832e-08, -0.3, -1.3113417e-08, 0, -1.1464113e-15, 2.6226834e-08, -0.29999998, 62.862717, 61.427635, 151.30003)
+transform = Transform3D(4.371139e-08, -1, -1.509958e-07, -1, -4.371139e-08, 0, -6.600236e-15, 1.509958e-07, -1, 62.862717, 61.08952, 151.30003)
 
 [node name="Collectible3" parent="Apples" unique_id=305680836 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.29544234, -0.052094493, 0, 0.052094493, -0.29544234, 0, 0, 0, 0.29999998, 100.7417, 49.179443, 170.67952)
+transform = Transform3D(-0.9848077, -0.1736483, 0, 0.1736483, -0.9848077, 0, 0, 0, 1, 99.41236, 48.841328, 170.67952)
 
 [node name="Collectible4" parent="Apples" unique_id=1999509246 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.29544234, -0.052094493, 0, 0.052094493, -0.29544234, 0, 0, 0, 0.29999998, 99.76872, 49.179443, 171.11102)
+transform = Transform3D(-0.9848077, -0.1736483, 0, 0.1736483, -0.9848077, 0, 0, 0, 1, 99.26395, 48.841328, 179.65352)
 
 [node name="Collectible5" parent="Apples" unique_id=1293551846 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.29544234, -0.052094493, 0, 0.052094493, -0.29544234, 0, 0, 0, 0.29999998, 96.27105, 49.179443, 171.604)
+transform = Transform3D(-0.9848077, -0.1736483, 0, 0.1736483, -0.9848077, 0, 0, 0, 1, 99.26475, 48.841328, 177.36728)
 
 [node name="Collectible6" parent="Apples" unique_id=280943966 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.29544234, -0.052094493, 0, 0.052094493, -0.29544234, 0, 0, 0, 0.29999998, 97.84432, 49.179443, 171.64359)
+transform = Transform3D(-0.9848077, -0.1736483, 0, 0.1736483, -0.9848077, 0, 0, 0, 1, 99.36746, 48.841328, 173.26987)
 
 [node name="Collectible7" parent="Apples" unique_id=833214486 instance=ExtResource("6_tefeu")]
-transform = Transform3D(-0.29544234, -0.052094493, 0, 0.052094493, -0.29544234, 0, 0, 0, 0.29999998, 99.38837, 49.179443, 172.29817)
+transform = Transform3D(-0.9848077, -0.1736483, 0, 0.1736483, -0.9848077, 0, 0, 0, 1, 99.38837, 48.841328, 175.26851)
 
 [node name="Killzone" type="Node3D" parent="." unique_id=829488690]
 

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bgce0yi56pnk5" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="PackedScene" uid="uid://dy5a6cdddaija" path="res://assets/cac-1774796432030.gltf" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://d4k3hl78u3ghj" path="res://sounds/jump.mp3" id="3_dqkch"]
+[ext_resource type="AudioStream" uid="uid://cq23b01msvdi8" path="res://sounds/forceField.ogg" id="4_qlg0r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qir2g"]
 radius = 36.55078
@@ -19,3 +21,11 @@ transform = Transform3D(1, 0, 0, 0, 0.95301104, 0.30293545, 0, -0.30293545, 0.95
 
 [node name="AuxScene" parent="." unique_id=1050923306 instance=ExtResource("2_g2els")]
 transform = Transform3D(-0.01, 0, -8.7422775e-10, 0, 0.01, 0, 8.7422775e-10, 0, -0.01, 0, 0, 0)
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=204212171]
+stream = ExtResource("3_dqkch")
+volume_db = -27.625
+
+[node name="GravitySound" type="AudioStreamPlayer" parent="." unique_id=897522533]
+stream = ExtResource("4_qlg0r")
+volume_db = -11.5
