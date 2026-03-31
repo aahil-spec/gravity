@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="gravity"
-run/main_scene="uid://bu06h237ptq15"
+run/main_scene="uid://dfi82sb7gfrwd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

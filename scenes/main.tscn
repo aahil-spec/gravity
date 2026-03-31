@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dv5ens802xnab" path="res://scenes/finish.tscn" id="5_tipki"]
 [ext_resource type="PackedScene" uid="uid://cwh3voqpbboux" path="res://scenes/collectible.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ckkcnlgcrapvx" path="res://scenes/kill_zone.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://cwhyawwwd3opq" path="res://scenes/hud.tscn" id="7_tipki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vyb7"]
 albedo_color = Color(0.30544624, 0.3054462, 0.3054462, 1)
@@ -33,7 +34,7 @@ sky_material = SubResource("PanoramaSkyMaterial_qhqgy")
 
 [sub_resource type="Environment" id="Environment_qlg0r"]
 background_mode = 2
-background_energy_multiplier = 0.8
+background_energy_multiplier = 0.5
 sky = SubResource("Sky_dqkch")
 
 [node name="Main" type="Node3D" unique_id=361245378]
@@ -250,5 +251,7 @@ visible = false
 [node name="KillZone4" parent="Killzone" unique_id=2049416024 instance=ExtResource("7_o6xl0")]
 transform = Transform3D(-0.7522318, -0.9999716, 0, 99.99717, -0.007522317, 0, 0, 0, 400, -61.81486, 47.116264, 99.09812)
 visible = false
+
+[node name="HUD" parent="." unique_id=1764467698 instance=ExtResource("7_tipki")]
 
 [editable path="Player"]

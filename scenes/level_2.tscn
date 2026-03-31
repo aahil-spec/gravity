@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://dfi82sb7gfrwd"]
+
+[ext_resource type="PackedScene" uid="uid://bwmx3yms68ll5" path="res://scenes/player.tscn" id="1_jm1iu"]
+[ext_resource type="Texture2D" uid="uid://dwrk4qwnpsq0j" path="res://material/rubber_tiles_rough_4k.jpg" id="2_pbc48"]
+[ext_resource type="Texture2D" uid="uid://bam4t0443ql6g" path="res://assets/citrus_orchard_road_puresky_4k.exr" id="3_pbc48"]
+[ext_resource type="PackedScene" uid="uid://ckkcnlgcrapvx" path="res://scenes/kill_zone.tscn" id="4_eqxsl"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_eqxsl"]
+panorama = ExtResource("3_pbc48")
+
+[sub_resource type="Sky" id="Sky_dqkch"]
+sky_material = SubResource("PanoramaSkyMaterial_eqxsl")
+
+[sub_resource type="Environment" id="Environment_b4j7a"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_dqkch")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqxsl"]
+transparency = 1
+albedo_color = Color(0, 0.06511396, 0.06523802, 0.54901963)
+metallic = 0.8
+roughness_texture = ExtResource("2_pbc48")
+refraction_enabled = true
+
+[node name="Level2" type="Node3D" unique_id=1441500926]
+
+[node name="Player" parent="." unique_id=1430519122 instance=ExtResource("1_jm1iu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0972508, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=807126568]
+environment = SubResource("Environment_b4j7a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2094442204]
+shadow_enabled = true
+
+[node name="Parkour2" type="Node3D" parent="." unique_id=1196518638]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Parkour2" unique_id=876224286]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, -12.063073)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Parkour2" unique_id=1405753637]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Parkour2" unique_id=2009135283]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5, -3.0630732)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Parkour2" unique_id=1361682309]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, -6.063073)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Parkour2" unique_id=1094555918]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5, -9.063073)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Parkour2" unique_id=2130010714]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 5, -15.063073)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Parkour2" unique_id=1833721593]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, -18.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Parkour2" unique_id=1813810278]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, -3, 0, -21.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Parkour2" unique_id=78544716]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, 3, 3, -21.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Parkour2" unique_id=883426513]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, -3, 6, -21.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Parkour2" unique_id=285734769]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, 3, 9, -21.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Parkour2" unique_id=1912397247]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, -3, 12, -21.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="Parkour2" unique_id=136912381]
+transform = Transform3D(-1.7484556e-08, -0.4, 0, 0.4, -1.7484556e-08, 0, 0, 0, 0.4, 3, 15, -21.063072)
+use_collision = true
+size = Vector3(5, 1, 5)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Parkour2" unique_id=95632137]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 14, -24.463072)
+use_collision = true
+size = Vector3(5, 1, 12)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="Killzone" type="Node3D" parent="." unique_id=1413495896]
+
+[node name="KillZone" parent="Killzone" unique_id=720571915 instance=ExtResource("4_eqxsl")]
+transform = Transform3D(400, 0, 0, 0, 1, 0, 0, 0, 400, 0, -6.8057933, 99.09812)
+visible = false
+
+[node name="KillZone2" parent="Killzone" unique_id=37887010 instance=ExtResource("4_eqxsl")]
+transform = Transform3D(400, 0, 0, 0, 1, 0, 0, 0, 400, 0, 101.38476, 99.09812)
+visible = false
+
+[node name="KillZone3" parent="Killzone" unique_id=476098070 instance=ExtResource("4_eqxsl")]
+transform = Transform3D(-0.7522318, -0.9999716, 0, 99.99717, -0.007522317, 0, 0, 0, 400, 124.04405, 47.116264, 99.09812)
+visible = false
+
+[node name="KillZone4" parent="Killzone" unique_id=678414188 instance=ExtResource("4_eqxsl")]
+transform = Transform3D(-0.7522318, -0.9999716, 0, 99.99717, -0.007522317, 0, 0, 0, 400, -61.81486, 47.116264, 99.09812)
+visible = false
