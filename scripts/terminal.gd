@@ -8,7 +8,7 @@ extends Control
 @export var bouncy_material: Material
 
 # 🛑 Paste your fresh API key here!
-const API_KEY = "AIzaSyAZd7SaABIXvLhPoqdNefVw9Sa0E2nK9WE"
+const API_KEY = "AIzaSyB4qxjwuWbYWyPmwjq-FNGMSWssYcHaU6M"
 const URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="
 
 func _ready():

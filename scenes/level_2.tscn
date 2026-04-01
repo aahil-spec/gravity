@@ -23,6 +23,44 @@ metallic = 0.8
 roughness_texture = ExtResource("2_pbc48")
 refraction_enabled = true
 
+[sub_resource type="Animation" id="Animation_eqxsl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parkour2/CSGBox3D15:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 14, -29.663073)]
+}
+
+[sub_resource type="Animation" id="Animation_b4j7a"]
+resource_name = "Slide1"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Parkour2/CSGBox3D15:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.0666666, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 14, -29.663073), Vector3(5, 14, -29.663073), Vector3(0, 14, -29.663073), Vector3(-5, 14, -29.663073), Vector3(0, 14, -29.663073)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wo48x"]
+_data = {
+&"RESET": SubResource("Animation_eqxsl"),
+&"Slide1": SubResource("Animation_b4j7a")
+}
+
 [node name="Level2" type="Node3D" unique_id=1441500926]
 
 [node name="Player" parent="." unique_id=1430519122 instance=ExtResource("1_jm1iu")]
@@ -119,6 +157,17 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 14, -24.463072)
 use_collision = true
 size = Vector3(5, 1, 12)
 material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Parkour2" unique_id=1942927717]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 14, -29.663073)
+use_collision = true
+size = Vector3(7, 1, 3)
+material = SubResource("StandardMaterial3D_eqxsl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Parkour2" unique_id=1119611710]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_wo48x")
+autoplay = &"Slide1"
 
 [node name="Killzone" type="Node3D" parent="." unique_id=1413495896]
 
