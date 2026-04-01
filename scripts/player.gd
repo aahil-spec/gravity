@@ -19,7 +19,7 @@ func _unhandled_input(event):
 		camera.rotate_object_local(Vector3.RIGHT,-event.relative.y*mouse_sens)
 		camera.rotation.x=clamp(camera.rotation.x,deg_to_rad(-85),deg_to_rad(85))
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
 		velocity+=up_direction*jump_velocity
 		$JumpSound.play()
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -38,7 +38,16 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("grav_right"):
 		set_gravity(Vector3.RIGHT)
 		$GravitySound.play()
-	var input_dir=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
+		# Press ESC to free your mouse
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+# Press Left Ctrl to force-lock your mouse
+	if Input.is_physical_key_pressed(KEY_CTRL):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var input_dir=Vector2.ZERO
+	if Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
+		input_dir=Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	var direction=(transform.basis*Vector3(input_dir.x,0,input_dir.y)).normalized()
 	var fall_vel=velocity.project(gravity_dir)
 	var walk_vel=direction*speed

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bu06h237ptq15"]
 
+[ext_resource type="PackedScene" uid="uid://cb8wuy3iac3v7" path="res://scenes/terminal.tscn" id="1_tipki"]
 [ext_resource type="PackedScene" uid="uid://bwmx3yms68ll5" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://bam4t0443ql6g" path="res://assets/citrus_orchard_road_puresky_4k.exr" id="2_sugp2"]
 [ext_resource type="Texture2D" uid="uid://dwrk4qwnpsq0j" path="res://material/rubber_tiles_rough_4k.jpg" id="2_tefeu"]
@@ -38,6 +39,8 @@ background_energy_multiplier = 0.5
 sky = SubResource("Sky_dqkch")
 
 [node name="Main" type="Node3D" unique_id=361245378]
+
+[node name="Terminal" parent="." unique_id=1702879510 instance=ExtResource("1_tipki")]
 
 [node name="Player" parent="." unique_id=1430519122 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5896187, 0)
