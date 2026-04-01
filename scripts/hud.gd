@@ -12,6 +12,7 @@ func _process(delta):
 	if timer_active:
 		time_elapsed+=delta
 		
+		@warning_ignore("integer_division")
 		var minutes=int(time_elapsed)/60
 		var seconds=int(time_elapsed)%60
 		var milliseconds =int((time_elapsed-int(time_elapsed))*100)

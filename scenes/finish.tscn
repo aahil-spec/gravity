@@ -11,8 +11,10 @@ height = 4.447052
 [sub_resource type="LabelSettings" id="LabelSettings_2pftv"]
 font_size = 72
 
-[node name="Finish" type="Area3D" unique_id=1080717885]
+[node name="Finish" type="Area3D" unique_id=1080717885 node_paths=PackedStringArray("level_complete_ui")]
 script = ExtResource("1_07gpw")
+next_level_path = "uid://dfi82sb7gfrwd"
+level_complete_ui = NodePath("WinUI/Label")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=233377710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30634093, -0.72328186, 0)
@@ -27,6 +29,7 @@ autoplay = &"Object_0"
 [node name="WinUI" type="CanvasLayer" parent="." unique_id=1165861988]
 
 [node name="ColorRect" type="ColorRect" parent="WinUI" unique_id=610114131]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

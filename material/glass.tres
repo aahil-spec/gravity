@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dyxuqv1cjw4iv"]
+
+[ext_resource type="Texture2D" uid="uid://dwrk4qwnpsq0j" path="res://material/rubber_tiles_rough_4k.jpg" id="1_k58i3"]
+
+[resource]
+transparency = 1
+albedo_color = Color(0.76862746, 1, 0.99607843, 0.54901963)
+metallic = 0.8
+roughness_texture = ExtResource("1_k58i3")
+refraction_enabled = true
