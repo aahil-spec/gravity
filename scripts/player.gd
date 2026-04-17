@@ -31,6 +31,9 @@ func _physics_process(delta):
 		$GravitySound.play()
 	if Input.is_action_just_pressed("grav_up"):
 		set_gravity(Vector3.UP)
+		
+		
+		
 		$GravitySound.play()
 	if Input.is_action_just_pressed("grav_left"):
 		set_gravity(Vector3.LEFT)
@@ -38,11 +41,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("grav_right"):
 		set_gravity(Vector3.RIGHT)
 		$GravitySound.play()
+		
 		# Press ESC to free your mouse
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-# Press Left Ctrl to force-lock your mouse
+#
 	if Input.is_physical_key_pressed(KEY_CTRL):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var input_dir=Vector2.ZERO
