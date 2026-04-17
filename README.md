@@ -1,4 +1,4 @@
-Gravity Shift
+Schwerkraft
 
 Hey everyone, I'm Aahil, and this is a 3D parkour game I've been building in Godot.
 
